@@ -27,7 +27,16 @@ public class StaleElement {
 		try {
 			element.click();
 		} catch(StaleElementReferenceException e) {
-			element = driver.findElement(By.xpath(onlineTrainingHeader));
+			/*
+			 * If you uncomment the below line then;
+			 * 
+			 * Exception in thread "main" org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+			 * 
+			 * will gone.
+			 * 
+			 * */
+			
+			//element = driver.findElement(By.xpath(onlineTrainingHeader));
 			element.click();
 		}
 		
